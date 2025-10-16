@@ -1,0 +1,65 @@
+import java.util.*;
+public class Main{
+    static Scanner sc = new Scanner(System.in);
+    
+    public static int checkBalance(int balance){
+        System.out.println("You're current balance amount: " + balance);
+        return balance;
+    }
+    
+    public static int withdraw(int balance){
+        System.out.print("Enter the amount to be withdraw: ");
+        int w_amount = sc.nextInt();
+        if(w_amount > balance){
+            System.out.println("Insufficient balance.");
+        }
+        else{
+            System.out.println("Collect you're cash and card.");
+            balance -= w_amount;
+            System.out.println("Remaining amount in you're account: " + balance);
+        }
+        return balance;
+    }
+    
+    public static int deposit(int balance, int d_amount){
+        System.out.println(d_amount + " is deposited to your account.");
+        balance += d_amount;
+        System.out.println("Updated balance: " + balance);
+        return balance;
+    }
+    
+    public static void main(String[] args){
+        int balance = 50000;
+        int PIN = 1234;
+        System.out.println("Welcome to ABC bank!!");
+        System.out.println("Choose from the below option.");
+        System.out.println("1. Check Balance");
+        System.out.println("2. Withdraw Cash");
+        System.out.println("3. Deposit");
+        System.out.println("4. Exit");
+        int option = sc.nextInt();
+        System.out.print("Enter PIN: ");
+        int u_pin = sc.nextInt();
+        if(u_pin == PIN){
+            switch(option){
+                case 1:
+                    checkBalance(balance);
+                    break;
+                case 2:
+                    withdraw(balance);
+                    break;
+                case 3:
+                    System.out.print("Enter Deposit amount: ");
+                    int d_amount = sc.nextInt();
+                    deposit(balance, d_amount);
+                    break;
+                default:
+                    System.out.println("Thank You.");
+                    
+            }
+        }
+        else{
+            System.out.println("Wrong PIN.");
+        }
+    }
+}
