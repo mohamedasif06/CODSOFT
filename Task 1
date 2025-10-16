@@ -1,0 +1,35 @@
+import java.util.*;
+public class Main{
+	public static void main(String[] args) {
+        Random random = new Random();
+        Scanner sc = new Scanner(System.in);
+        //getting number between 1 to 100
+        int randomIntBounded = random.nextInt(100) + 1;
+        boolean isGuessedCorrectly = false;
+        int attempts = 0;
+        
+        System.out.println("Welcome to Number guessing name!!!");
+        System.out.println("Let's start!");
+        
+        while(!isGuessedCorrectly){
+            System.out.print("Enter your guess: ");
+            int guess = sc.nextInt();
+            System.out.println("n: " + randomIntBounded);
+            if(guess < randomIntBounded){
+                System.out.println("Too loo try again.");
+                attempts++;
+            }
+            else if(guess > randomIntBounded){
+                System.out.println("Too high try again.");
+                attempts++;
+            }
+            else{
+                System.out.println("Yes Correct");
+                break;
+                
+            }
+        }
+        System.out.println("You found the correct number in " + attempts + " attempts");
+        
+	}
+}
