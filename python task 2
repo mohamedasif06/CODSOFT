@@ -1,0 +1,32 @@
+#simple calculator
+def add(x,y):
+    result = x+y
+    return result
+def sub(x,y):
+    result = x-y
+    return result
+def div(x,y):
+    result = x/y
+    return result
+def mul(x,y):
+    result = x*y
+    return result
+a = int(input("Enter number 1: "))
+b = int(input("Enter number 2: "))
+print("What to do?\n1.Addition\n2.Subtraction\n3.Division\n4.Multiplication\nChoose from this..")
+choice = int(input())
+if choice == 1:
+    answer = add(a,b)
+    print("Answer: ",answer)
+elif choice == 2:
+    answer = sub(a,b)
+    print("Answer: ",answer)
+elif choice == 3:
+    answer = div(a,b)
+    print("Answer: ",answer)
+elif choice == 4:
+    answer = mul(a,b)
+    print("Answer: ",answer)
+else:
+    print("Invalid input.")
+    
